@@ -282,6 +282,156 @@
             </objects>
             <point key="canvasLocation" x="3975.1999999999998" y="983.65817091454278"/>
         </scene>
+        <!--Observation View Controller-->
+        <scene sceneID="7Zb-3M-Ub2">
+            <objects>
+                <viewController storyboardIdentifier="observationVC" id="hc1-Jt-Xvq" customClass="ObservationViewController" customModule="weather_with_Lung" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XZu-lA-1Z8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-Ue-YxJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HasImageCell" rowHeight="300" id="ksi-tX-Daf" customClass="HasImageTableViewCell" customModule="weather_with_Lung" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ksi-tX-Daf" id="sSJ-xc-fEf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-wA-ow9">
+                                                    <rect key="frame" x="5" y="5" width="365" height="290"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-8L-oV5">
+                                                            <rect key="frame" x="327" y="10" width="30" height="26.5"/>
+                                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="mlW-vI-9at"/>
+                                                                <constraint firstAttribute="height" constant="30" id="tCX-P3-ftV"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雷達回波" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcl-cE-fTJ">
+                                                            <rect key="frame" x="8" y="8" width="73.5" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CqM-es-WCe">
+                                                            <rect key="frame" x="52" y="30.5" width="261" height="250"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="250" id="5wz-TP-UfZ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="CqM-es-WCe" firstAttribute="leading" secondItem="vLu-wA-ow9" secondAttribute="leading" constant="52" id="6aR-Fa-hMv"/>
+                                                        <constraint firstItem="CqM-es-WCe" firstAttribute="top" secondItem="hcl-cE-fTJ" secondAttribute="bottom" constant="1" id="96p-hC-SZt"/>
+                                                        <constraint firstItem="hcl-cE-fTJ" firstAttribute="top" secondItem="vLu-wA-ow9" secondAttribute="top" constant="8" id="9IP-rW-s5D"/>
+                                                        <constraint firstItem="hcl-cE-fTJ" firstAttribute="leading" secondItem="vLu-wA-ow9" secondAttribute="leading" constant="8" id="Bnq-G0-mBc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vuj-8L-oV5" secondAttribute="trailing" constant="8" id="TKU-qC-wTK"/>
+                                                        <constraint firstItem="vuj-8L-oV5" firstAttribute="top" secondItem="vLu-wA-ow9" secondAttribute="top" constant="8" id="cX0-2L-pxC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CqM-es-WCe" secondAttribute="trailing" constant="52" id="zbk-WI-vfq"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vLu-wA-ow9" secondAttribute="trailing" constant="5" id="J7N-je-5MX"/>
+                                                <constraint firstItem="vLu-wA-ow9" firstAttribute="top" secondItem="sSJ-xc-fEf" secondAttribute="top" constant="5" id="Plx-03-rGu"/>
+                                                <constraint firstAttribute="bottom" secondItem="vLu-wA-ow9" secondAttribute="bottom" constant="5" id="QV4-EH-nvB"/>
+                                                <constraint firstItem="vLu-wA-ow9" firstAttribute="leading" secondItem="sSJ-xc-fEf" secondAttribute="leading" constant="5" id="Xg4-zG-E6f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="hcl-cE-fTJ" id="GPj-42-MH7"/>
+                                            <outlet property="weatherImageView" destination="CqM-es-WCe" id="BDm-Mr-5Ho"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoImageCell" id="kJg-Xf-51S" customClass="NoImageTableViewCell" customModule="weather_with_Lung" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="328" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kJg-Xf-51S" id="dBb-Mi-2C4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwT-GZ-cDo">
+                                                    <rect key="frame" x="5" y="5" width="365" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雷達回波" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbO-VX-rj6">
+                                                            <rect key="frame" x="8" y="12" width="314" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZPk-QQ-aRE">
+                                                            <rect key="frame" x="327" y="5" width="30" height="26.5"/>
+                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="pJ8-Nc-Zgg"/>
+                                                                <constraint firstAttribute="width" constant="30" id="xHT-YK-eti"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ZPk-QQ-aRE" firstAttribute="leading" secondItem="WbO-VX-rj6" secondAttribute="trailing" constant="5" id="EuF-wf-3Kl"/>
+                                                        <constraint firstItem="ZPk-QQ-aRE" firstAttribute="trailing" secondItem="AwT-GZ-cDo" secondAttribute="trailingMargin" id="EwM-dH-yGS"/>
+                                                        <constraint firstItem="WbO-VX-rj6" firstAttribute="top" secondItem="AwT-GZ-cDo" secondAttribute="top" constant="12" id="I5h-aW-1my"/>
+                                                        <constraint firstItem="ZPk-QQ-aRE" firstAttribute="top" secondItem="AwT-GZ-cDo" secondAttribute="top" constant="3" id="ibS-hu-WgO"/>
+                                                        <constraint firstItem="WbO-VX-rj6" firstAttribute="leading" secondItem="AwT-GZ-cDo" secondAttribute="leading" constant="8" id="uF7-l2-k48"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="AwT-GZ-cDo" secondAttribute="trailing" constant="5" id="JxC-nA-Jwg"/>
+                                                <constraint firstItem="AwT-GZ-cDo" firstAttribute="leading" secondItem="dBb-Mi-2C4" secondAttribute="leading" constant="5" id="LmH-H7-wsV"/>
+                                                <constraint firstItem="AwT-GZ-cDo" firstAttribute="top" secondItem="dBb-Mi-2C4" secondAttribute="top" constant="5" id="ce8-9o-345"/>
+                                                <constraint firstAttribute="bottom" secondItem="AwT-GZ-cDo" secondAttribute="bottom" constant="-6.5" id="ifx-2N-JGJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="WbO-VX-rj6" id="Pwz-4J-qK5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iFf-9F-q6d" firstAttribute="bottom" secondItem="Yk2-Ue-YxJ" secondAttribute="bottom" id="LD7-xj-Lx4"/>
+                            <constraint firstItem="iFf-9F-q6d" firstAttribute="trailing" secondItem="Yk2-Ue-YxJ" secondAttribute="trailing" id="MVf-Zs-6Bx"/>
+                            <constraint firstItem="Yk2-Ue-YxJ" firstAttribute="top" secondItem="iFf-9F-q6d" secondAttribute="top" id="Qiw-DQ-PgP"/>
+                            <constraint firstItem="Yk2-Ue-YxJ" firstAttribute="leading" secondItem="iFf-9F-q6d" secondAttribute="leading" id="uTY-AS-yVj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iFf-9F-q6d"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b0h-5f-jEw"/>
+                    <connections>
+                        <outlet property="observationTableView" destination="Yk2-Ue-YxJ" id="iJf-M4-AhB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOW-f8-835" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3991.1999999999998" y="1763.568215892054"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="P4Z-FN-g9c">
+            <objects>
+                <viewController storyboardIdentifier="webviewVC" id="kMD-Hd-baT" customClass="WebViewController" customModule="weather_with_Lung" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ve0-5z-h40">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IS5-tJ-MGH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dpq-9J-QLV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6GC-iC-dIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4912.8000000000002" y="1763.568215892054"/>
+        </scene>
         <!--天氣-->
         <scene sceneID="9lj-Cx-6og">
             <objects>
@@ -582,6 +732,7 @@
                     <connections>
                         <segue destination="L6t-CZ-enJ" kind="relationship" relationship="viewControllers" id="ZDL-Jb-T09"/>
                         <segue destination="4ov-Wm-WD5" kind="relationship" relationship="viewControllers" id="rGn-YD-FQV"/>
+                        <segue destination="mBV-JH-yp7" kind="relationship" relationship="viewControllers" id="wxl-ja-MLN"/>
                         <segue destination="ilf-ID-qNs" kind="relationship" relationship="viewControllers" id="HeA-V0-wo8"/>
                     </connections>
                 </tabBarController>
@@ -589,9 +740,30 @@
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="280.20989505247377"/>
         </scene>
+        <!--觀測-->
+        <scene sceneID="O6l-h8-pkt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mBV-JH-yp7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="觀測" image="eyeglasses" catalog="system" id="UGA-Mj-Jqq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GT7-ws-DqF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hc1-Jt-Xvq" kind="relationship" relationship="rootViewController" id="cIQ-18-Sku"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6H-fK-yAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3052" y="1763.568215892054"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="cloud.fill" catalog="system" width="64" height="42"/>
+        <image name="eyeglasses" catalog="system" width="64" height="26"/>
         <image name="hellopage" width="1080" height="2160"/>
         <image name="house-black-silhouette-without-door" width="24" height="24"/>
         <image name="settings-cog" width="24" height="24"/>

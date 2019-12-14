@@ -17,25 +17,27 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+
+        //print("viewDidLoad")
         // Do any additional setup after loading the view.
-        getVersion()
+        //checkStatus()
+
         NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.checkStatus), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //print("viewWillAppear")
+        getVersion()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkStatus()
 
     }
     
     @objc func checkStatus() {
-        getVersion()
         
         if !CheckInterNetConnrction.isConnectedToNetwork() {
             let alertController = UIAlertController(title: "請開啟網路連線或使用Wifi連線", message: nil, preferredStyle: .alert)
@@ -60,8 +62,10 @@ class FirstViewController: UIViewController {
             
         } else {
             
+            print("check:this:\(thisVersion!)--now:\(nowVersion)")
+            
             if thisVersion != nowVersion {
-               // print("2:\(nowVersion)----\(thisVersion)")
+                print("checkStatus")
                 let alertController = UIAlertController(title: "訊息", message: "您的看看天氣並未更新到最新版，請更新至最新版本", preferredStyle: .alert)
                 
                 let updateAction = UIAlertAction(title: "確認", style: .default) { (action) in
@@ -111,12 +115,15 @@ class FirstViewController: UIViewController {
     
     ///checkVersion
     @objc func checkVersion() {
+        //print("checkVersion")
+        print("checkVision:this:\(thisVersion!)--now:\(nowVersion)")
         if thisVersion != nowVersion {
+            print("checkvision")
             let alertController = UIAlertController(title: "訊息", message: "您的看看天氣並未更新到最新版，請更新至最新版本", preferredStyle: .alert)
             
             let updateAction = UIAlertAction(title: "確認", style: .default) { (action) in
                 
-                UIApplication.shared.canOpenURL(URL(string: "https://apps.apple.com/tw/app/%E7%9C%8B%E7%9C%8B%E5%A4%A9%E6%B0%A3/id1488575551")!)
+                UIApplication.shared.openURL(URL(string: "https://apps.apple.com/tw/app/%E7%9C%8B%E7%9C%8B%E5%A4%A9%E6%B0%A3/id1488575551")!)
             }
             
             alertController.addAction(updateAction)
@@ -145,8 +152,11 @@ extension FirstViewController: URLSessionDelegate, URLSessionDownloadDelegate {
                 let dataArray = array.object(forKey: "results") as! NSArray
                 let data = dataArray[0] as! NSDictionary
                 nowVersion = "\(String(describing: data.object(forKey: "version")!))"
-                print(nowVersion)
+                //print(nowVersion)
                 checkVersion()
+                checkStatus()
+            } else {
+                
             }
         } catch {
             //do something
